@@ -2,7 +2,8 @@
 Taylor Brown Python Classes
 """
 
-class Weapons():
+
+class Weapons:
     """
     Weapons of Rust
     """
@@ -30,10 +31,10 @@ class Weapons():
         dps = self.__fire_rate * self.__damage
         return dps
 
+
 if __name__ == "__main__":
     hunting_bow = Weapons("Hunting Bow", 1, 1, 30)
     tommy = Weapons("Tommy", 2, 5, 10)
     ak = Weapons("Ak", 3, 6, 18)
     print(ak.weapon_choice())
     print(ak.dps_calculations())
-    
