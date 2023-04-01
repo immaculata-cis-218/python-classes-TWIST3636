@@ -14,6 +14,50 @@ class Weapons:
         self.__fire_rate = fire_rate
         self.__damage = damage
 
+    def __repr__(self):
+        """
+        Returns a complete representation of the object
+        """
+        return ("Weapons(" + str(self.__weapon_name) + "," +
+                str(self.__weapon_tier) + "," + str(self.__fire_rate) +
+                "," + str(self.__damage) + ")")
+
+    def __str__(self):
+        """
+        Returns a human readable string
+        """
+        return ("(" + str(self.__weapon_name) + "," +
+                str(self.__weapon_tier) + "," + str(self.__fire_rate) +
+                "," + str(self.__damage) + ")")
+
+    def __eq__(self, other):
+        """
+        Weapons are the same
+        """
+        if self is other:
+            return True
+        if type(self) != type(other):
+            return False
+        return (self.__weapon_name == other.__weapon_name and
+        self.__weapon_tier == other.__weapon_tier and self.__fire_rate == other.__fire_rate
+        and self.__damage == other.__damage)
+
+    def __lt__(self, other):
+        """
+        Compares if one weapon's tier is less than the other
+        """
+        if type(self) != type(other):
+            return False
+        return self.__weapon_tier < other.__weapon_tier
+
+    def __gt__(self, other):
+        """
+        Compares if one weapon's tier is greater than the other
+        """
+        if type(self) != type(other):
+            return False
+        return self.__weapon_tier > other.__weapon_tier
+
     def weapon_choice(self):
         """
         States the weapon choice and tier of that weapon

@@ -63,3 +63,44 @@ def test_craft_stack_arrows():
     test_weapon = Primative("Crossbow", weapon_tier=1, fire_rate=1,
                           damage=45, arrows=4, wood=50, stones=20)
     assert test_weapon.craft_stack_arrows() == f"{1600} wood and {640} stones"
+
+def test_repr():
+    """
+    Tests the repr function's output
+    """
+    test_weapon = Weapons("Ray Gun", 4, 10000, 100)
+    repr_test = repr(test_weapon)
+    assert "Ray Gun" in repr_test
+
+def test_str():
+    """
+    Test the str function's output
+    """
+    test_weapon = Weapons("Ray Gun", 4, 10000, 100)
+    str_test = str(test_weapon)
+    assert "Ray Gun" in str_test
+
+def test_eq():
+    """
+    Tests if two weapons are the same tier
+    """
+    test_weapon = Weapons("Ray Gun", 4, 10000, 100)
+    test_weapon2 = Weapons("Rock", 0, 1, 2)
+    assert test_weapon != test_weapon2
+
+def test_lt():
+    """
+    Tests if one weapon's tier is less than the other
+    """
+    test_weapon = Weapons("Ray Gun", 4, 10000, 100)
+    test_weapon2 = Weapons("Rock", 0, 1, 2)
+    assert test_weapon2 < test_weapon
+
+def test_gt():
+    """
+    Tests if one weapon's tier is greater than the other
+    """
+    test_weapon = Weapons("Ray Gun", 4, 10000, 100)
+    test_weapon2 = Weapons("Rock", 0, 1, 2)
+    assert test_weapon > test_weapon2
+    
